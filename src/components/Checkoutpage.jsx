@@ -7,7 +7,7 @@ const stripePromise = loadStripe('pk_test_dGtLgGdTICn70sUb4eG3mX2x00mjEVczpA');
 
 const sendEmail = async (paymentIntentId) => {
   try {
-    const response = await fetch('http://localhost:5000/send-email', {
+    const response = await fetch('https://watchpartyufcbackend.onrender.com/send-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ paymentIntentId }),
@@ -91,7 +91,7 @@ const Checkout = () => {
         return;
       }
       
-      const response = await fetch('http://localhost:5000/create-payment-intent', {
+      const response = await fetch('https://watchpartyufcbackend.onrender.com/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
